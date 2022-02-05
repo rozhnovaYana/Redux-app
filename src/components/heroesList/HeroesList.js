@@ -22,11 +22,9 @@ const HeroesList = () => {
         }
     )
     const heroesFiltered = useSelector(heroesFilteredSelector)
-    const { heroesLoadingStatus} = useSelector(state => state);
+    const { heroesLoadingStatus} = useSelector(state => state.heroes);
     const dispatch = useDispatch();
     const {request} = useHttp();
-
-
 
     useEffect(() => {
         dispatch(heroesFetching());

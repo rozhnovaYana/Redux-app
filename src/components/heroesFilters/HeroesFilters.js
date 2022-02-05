@@ -22,7 +22,7 @@ const HeroesFilters = () => {
     }
 
     useEffect(() => {
-        dispatch(filtersFetching())
+        dispatch('FILTERS_FETCHING')
         request("http://localhost:3001/filters")
         .then(
             data => {

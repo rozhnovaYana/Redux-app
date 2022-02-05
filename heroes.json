@@ -29,6 +29,12 @@
       "name": "sss",
       "description": "sss",
       "element": "water"
+    },
+    {
+      "id": 83,
+      "name": "c",
+      "description": "c",
+      "element": "fire"
     }
   ],
   "filters": [

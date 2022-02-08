@@ -1,46 +1,40 @@
 {
   "heroes": [
     {
-      "id": 27,
-      "name": "ss",
-      "description": "cc",
+      "id": 83,
+      "name": "Яна",
+      "description": "я умею спать",
+      "element": "fire"
+    },
+    {
+      "id": 74,
+      "name": "Денис",
+      "description": "Я зайка",
+      "element": "fire"
+    },
+    {
+      "id": 33,
+      "name": "Бобрик",
+      "description": "спать",
+      "element": "earth"
+    },
+    {
+      "id": 75,
+      "name": "ветер",
+      "description": "дуть",
       "element": "wind"
     },
     {
-      "id": 64,
-      "name": "a",
-      "description": "a",
+      "id": 92,
+      "name": "огонь",
+      "description": "гореть",
       "element": "fire"
     },
     {
-      "id": 23,
-      "name": "Яна",
-      "description": "44",
-      "element": ""
-    },
-    {
-      "id": 63,
-      "name": "sss",
-      "description": "sss",
+      "id": 31,
+      "name": "вода",
+      "description": "течь",
       "element": "water"
-    },
-    {
-      "id": 83,
-      "name": "c",
-      "description": "c",
-      "element": "fire"
-    },
-    {
-      "id": 18,
-      "name": "ss",
-      "description": "fff",
-      "element": "fire"
-    },
-    {
-      "id": 80,
-      "name": "ff",
-      "description": "fff",
-      "element": "fire"
     }
   ],
   "filters": [

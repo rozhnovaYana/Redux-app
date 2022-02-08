@@ -1,4 +1,6 @@
 import { createStore, combineReducers, compose, applyMiddleware  } from 'redux';
+import thunk from 'redux-thunk'
+ 
 import filters from "../reducers/filters";
 import heroes from "../reducers/heroes";
 
@@ -29,6 +31,6 @@ const middleWare = (store) => (dispatch) => (action) => {
 //     return store
 // }
 
-const store = createStore(combineReducers({filters, heroes}), compose(applyMiddleware(middleWare), window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()));
+const store = createStore(combineReducers({filters, heroes}), compose(applyMiddleware(thunk, middleWare), window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()));
 
 export default store;

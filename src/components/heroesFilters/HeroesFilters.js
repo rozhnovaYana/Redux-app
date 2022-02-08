@@ -9,7 +9,7 @@ import { useEffect } from "react"
 import HeroeFilter from "../heroeFilter/heroeFilter";
 import { useHttp } from "../../hooks/http.hook";
 import { useDispatch, useSelector } from "react-redux";
-import { filtersFetched, filtersFetching, filtersFetchingError, setActiveFilter } from "../../actions";
+import { filtersRequest, setActiveFilter } from "../../actions";
 import Spinner from "../spinner/Spinner";
 
 const HeroesFilters = () => {
@@ -22,15 +22,7 @@ const HeroesFilters = () => {
     }
 
     useEffect(() => {
-        dispatch('FILTERS_FETCHING')
-        request("http://localhost:3001/filters")
-        .then(
-            data => {
-                dispatch(filtersFetched(data))
-            },
-            () => {
-                dispatch(filtersFetchingError())
-            })
+        dispatch(filtersRequest(request))
     }, [dispatch, request]);
 
     if(filtersLoadingStatus === "loading"){

@@ -1,18 +1,6 @@
 {
   "heroes": [
     {
-      "id": 83,
-      "name": "Яна",
-      "description": "я умею спать",
-      "element": "fire"
-    },
-    {
-      "id": 74,
-      "name": "Денис",
-      "description": "Я зайка",
-      "element": "fire"
-    },
-    {
       "id": 33,
       "name": "Бобрик",
       "description": "спать",

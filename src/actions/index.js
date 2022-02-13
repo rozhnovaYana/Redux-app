@@ -52,11 +52,13 @@ export const filtersRequest = (request) => (dispatch) => {
             dispatch(filtersFetchingError())
         })
 }
+
 export const filtersFetching = () => {
     return {
         type: 'FILTERS_FETCHING'
     }
 }
+
 export const filtersFetched = (filters) => {
     return{
         type:`FILTERS_FETCHED`,

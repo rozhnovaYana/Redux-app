@@ -17,12 +17,6 @@
       "name": "огонь",
       "description": "гореть",
       "element": "fire"
-    },
-    {
-      "id": 31,
-      "name": "вода",
-      "description": "течь",
-      "element": "water"
     }
   ],
   "filters": [

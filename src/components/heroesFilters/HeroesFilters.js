@@ -9,7 +9,8 @@ import { useEffect } from "react"
 import HeroeFilter from "../heroeFilter/heroeFilter";
 import { useHttp } from "../../hooks/http.hook";
 import { useDispatch, useSelector } from "react-redux";
-import { filtersRequest, setActiveFilter } from "../../actions";
+import { filtersRequest} from "../../actions";
+import { setActiveFilter } from "./filtersSlicer";
 import Spinner from "../spinner/Spinner";
 
 const HeroesFilters = () => {

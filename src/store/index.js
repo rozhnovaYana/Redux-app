@@ -2,8 +2,8 @@
 // import thunk from 'redux-thunk'
 import { configureStore } from '@reduxjs/toolkit'
 
-import filters from "../reducers/filters";
-import heroes from "../reducers/heroes";
+import heroes from "../components/heroesList/heroesSlicer";
+import filters from "../components/heroesFilters/filtersSlicer";
 
 const middleWare = (store) => (dispatch) => (action) => {
     if(typeof action === "string"){

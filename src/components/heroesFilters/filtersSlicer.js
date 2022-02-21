@@ -1,4 +1,5 @@
-import { createSlice } from '@reduxjs/toolkit';
+import { createSlice, createAsyncThunk } from '@reduxjs/toolkit'
+import { useHttp } from '../../hooks/http.hook';
 
 const initialState = {
     filters: [],
@@ -6,23 +7,35 @@ const initialState = {
     activeFilter: "all"
 }
 
+export const filtersRequest = createAsyncThunk(
+    "filters/filtersRequest",
+    async () => {
+        const {request} = useHttp();
+        return await request("http://localhost:3001/filters")
+    }
+)
+
 const filtersSlicer = createSlice({
-    name:'heroes',
+    name:'filters',
     initialState,
     reducers: {
-        filtersFetching: state => {
-            state.filtersLoadingStatus = "loading"
-        },
-        filtersFetched: (state, action) => {
-            state.filters = action.payload,
-            state.filtersLoadingStatus = "idle"
-        },
-        filtersFetchingError: state => {
-            state.filtersLoadingStatus = "error"
-        },
         setActiveFilter: (state, action) => {
             state.activeFilter = action.payload
         }
+    },
+    extraReducers: (builder) => {
+        builder
+            .addCase(filtersRequest.pending, state => {
+                state.filtersLoadingStatus = "loading"
+            })
+            .addCase(filtersRequest.fulfilled, (state, action) => {
+                state.filters = action.payload;
+                state.filtersLoadingStatus = "idle"
+            })
+            .addCase(filtersRequest.rejected, state => {
+                state.filtersLoadingStatus = "error"
+            })
+            .addDefaultCase(() =>{})
     }
 })
 

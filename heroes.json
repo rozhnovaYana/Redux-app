@@ -17,6 +17,12 @@
       "name": "огонь",
       "description": "гореть",
       "element": "fire"
+    },
+    {
+      "id": 82,
+      "name": "Denis",
+      "description": "Puki",
+      "element": "fire"
     }
   ],
   "filters": [

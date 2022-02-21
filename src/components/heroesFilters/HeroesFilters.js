@@ -7,15 +7,12 @@
 // Представьте, что вы попросили бэкенд-разработчика об этом
 import { useEffect } from "react"
 import HeroeFilter from "../heroeFilter/heroeFilter";
-import { useHttp } from "../../hooks/http.hook";
 import { useDispatch, useSelector } from "react-redux";
-import { filtersRequest} from "../../actions";
-import { setActiveFilter } from "./filtersSlicer";
+import { setActiveFilter, filtersRequest } from "./filtersSlicer";
 import Spinner from "../spinner/Spinner";
 
 const HeroesFilters = () => {
     const { filters, filtersLoadingStatus, activeFilter } = useSelector(state => state.filters)
-    const { request } = useHttp();
     const dispatch = useDispatch();
 
     const onClick = (name) => {
@@ -23,8 +20,8 @@ const HeroesFilters = () => {
     }
 
     useEffect(() => {
-        dispatch(filtersRequest(request))
-    }, [dispatch, request]);
+        dispatch(filtersRequest())
+    }, [dispatch]);
 
     if(filtersLoadingStatus === "loading"){
         return <Spinner/>
